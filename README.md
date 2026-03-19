@@ -94,7 +94,7 @@ open a machine terminal in your `Repos` folder:
 
 ```shell
 # Replace username with YOUR GitHub username.
-git clone https://github.com/username/nlp-02-text-preprocessing
+git clone https://github.com/bfuemmeler/nlp-02-text-preprocessing
 cd nlp-02-text-preprocessing
 code .
 ```
@@ -118,11 +118,11 @@ uvx pre-commit run --all-files
 
 # First, run the module
 # IMPORTANT: Close each figure after viewing so execution continues
-uv run python -m nlp.text_preprocessing_case
+uv run python -m nlp.text_preprocessing_fuemmeler
 
 # Then, open the notebook.
 # IMPORTANT: Select the kernel and Run All:
-# notebooks/text_preprocessing_case.ipynb
+# notebooks/text_preprocessing_fuemmeler.ipynb
 
 uv run ruff format .
 uv run ruff check . --fix
