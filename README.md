@@ -143,3 +143,52 @@ git push -u origin main
 ## Example Artifact (Output)
 
 ![Word Cloud Example](docs/images/word_cloud_example.png)
+
+## Make a Technical Modification
+- I added a bigram analysis step to identify the most frequent two-word combinations.
+
+# -----------------------------
+# BIGRAM ANALYSIS MODIFICATION
+# -----------------------------
+
+from collections import Counter
+
+# Create bigrams (2-word combinations)
+bigrams = list(zip(clean_tokens, clean_tokens[1:]))
+
+# Count frequency of bigrams
+bigram_counts = Counter(bigrams)
+
+# Show top 10 most common bigrams
+top_bigrams = bigram_counts.most_common(10)
+
+print("\nTop 10 Bigrams:")
+for bg, count in top_bigrams:
+    print(f"{bg[0]} {bg[1]}: {count}")
+
+## Bar Chart to Display Bigrams
+import matplotlib.pyplot as plt
+
+# Prepare data for plotting
+bigram_labels = [f"{bg[0]} {bg[1]}" for bg, _ in top_bigrams]
+bigram_values = [count for _, count in top_bigrams]
+
+# Plot
+plt.figure()
+plt.barh(bigram_labels, bigram_values)
+plt.xlabel("Frequency")
+plt.title("Top 10 Most Frequent Bigrams")
+plt.gca().invert_yaxis()
+plt.show()
+
+## Apply Skills to a Different Problem
+
+Create new file "text_preprocessing2-fuemmeler.ipynb"
+Import new csv "IMDB_dataset.csv"
+
+Update Imports
+Update Read the Text code
+Update and add more Stop Words to narrow down tokens
+Add Chart to see Top Negative Reviews
+
+Git Add, Commit, Push
